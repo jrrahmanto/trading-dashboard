@@ -401,10 +401,13 @@
         const size = item.size || '—';
         const rb = reversed.length - 1 - idx;
         const runningBal = enriched[rb]?.runningBalance || initial;
-        const ts = item.timestamp || item.date || null;
+        const openTs = item.open_time || item.timestamp || null;
+        const closeTs = item.close_time || null;
+        const status = item.status || 'open';
 
         rows += '<tr>';
-        rows += '<td class="td-date">' + fmtDateTime(ts) + '</td>';
+        rows += '<td class="td-date">' + (openTs ? fmtDateTime(new Date(openTs)) : '—') + '</td>';
+        rows += '<td class="td-date">' + (closeTs ? fmtDateTime(new Date(closeTs)) : '<span style="color:var(--accent-light)">Open</span>') + '</td>';
         rows += '<td class="td-symbol">' + symbol + '</td>';
         rows += '<td>' + (dirClass ? '<span class="td-direction ' + dirClass + '">' + item.direction + '</span>' : '—') + '</td>';
         rows += '<td>' + entry + '</td>';
@@ -418,7 +421,7 @@
 
       const table = '<table>' +
         '<thead>' +
-        '<tr><th>Waktu (WIB)</th><th>Simbol</th><th>Arah</th><th>Entry</th><th>Exit</th><th>Size</th><th>PnL</th><th>Saldo</th></tr>' +
+        '<tr><th>Open (WIB)</th><th>Close (WIB)</th><th>Simbol</th><th>Arah</th><th>Entry</th><th>Exit</th><th>Size</th><th>PnL</th><th>Saldo</th></tr>' +
         '</thead>' +
         '<tbody>' + rows + '</tbody>' +
         '</table>';
