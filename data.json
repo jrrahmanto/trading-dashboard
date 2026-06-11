@@ -19,10 +19,10 @@
       "direction": "LONG",
       "size": 440.0,
       "entry": 0.2465,
-      "exit": null,
+      "exit": 0.2446,
       "pnl": -0.84,
-      "timestamp": "2026-06-11T19:17:58+07:00",
-      "status": "open"
+      "timestamp": "2026-06-11T19:35:00+07:00",
+      "status": "closed"
     }
   ]
 }
