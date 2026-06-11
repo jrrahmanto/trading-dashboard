@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Balance Dashboard | Trading</title>
+  <style>
+    :root {
+      --bg: #0f0f12;
+      --card: #1a1a1f;
+      --text: #e6e6e6;
+      --text-muted: #a3a3b8;
+      --border: #2d2d37;
+      --accent: #7e57c2;
+      --success: #4caf50;
+      --warning: #ff9800;
+      --error: #f44336;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, sans-serif;
+      line-height: 1.5;
+      padding: 16px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 8px;
+      padding: 16px;
+      border: 1px solid var(--border);
+    }
+    .metric {
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+    .label {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 4px;
+    }
+    .changes {
+      margin-top: 24px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+    th, td {
+      padding: 12px 8px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .positive { color: var(--success); }
+    .negative { color: var(--error); }
+    .timestamp {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+    }
+    footer {
+      margin-top: 32px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>📊 Balance Dashboard</h1>
+    <p>Virtual Balance — OKX/Bybit Simulation</p>
+  </div>
+
+  <div class="summary">
+    <div class="card">
+      <div class="metric">$50.00</div>
+      <div class="label">Saldo Saat Ini</div>
+    </div>
+    <div class="card">
+      <div class="metric">$50.00</div>
+      <div class="label">Awal</div>
+    </div>
+    <div class="card">
+      <div class="metric">+ $0.00</div>
+      <div class="label">Delta</div>
+    </div>
+    <div class="card">
+      <div class="metric">0.00%</div>
+      <div class="label">Perubahan</div>
+    </div>
+  </div>
+
+  <div class="changes">
+    <h2>Riwayat Transaksi</h2>
+    <p><em>Tidak ada transaksi</em></p>
+  </div>
+
+  <footer>
+    Updated: <span id="time">—</span> • Powered by Hermes Agent
+  </footer>
+
+  <script>
+    document.getElementById('time').textContent = new Date().toLocaleString('id-ID', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      timeZoneName: 'short'
+    });
+  </script>
+</body>
+</html>
