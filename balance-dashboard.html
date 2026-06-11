@@ -12,124 +12,459 @@
       --text-muted: #a3a3b8;
       --border: #2d2d37;
       --accent: #7e57c2;
+      --accent-light: #b39ddb;
       --success: #4caf50;
       --warning: #ff9800;
       --error: #f44336;
+      --positive-bg: rgba(76, 175, 80, 0.1);
+      --negative-bg: rgba(244, 67, 54, 0.1);
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: 'Inter', -apple-system, sans-serif;
+      font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif;
       line-height: 1.5;
-      padding: 16px;
-      max-width: 800px;
+      padding: 24px 16px;
+      max-width: 900px;
       margin: 0 auto;
     }
+
     .header {
       text-align: center;
-      margin-bottom: 24px;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
     }
-    h1 {
-      font-size: 1.8rem;
+    .header h1 {
+      font-size: 2rem;
       font-weight: 600;
-      color: var(--accent);
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 4px;
     }
+    .header .subtitle {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Status bar */
+    .status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .status-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 6px;
+    }
+    .status-dot.live { background: var(--success); }
+    .status-dot.loading { background: var(--warning); }
+    .status-dot.error { background: var(--error); }
+
+    /* Summary cards */
     .summary {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      margin-bottom: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 12px;
+      margin-bottom: 32px;
     }
     .card {
       background: var(--card);
-      border-radius: 8px;
-      padding: 16px;
+      border-radius: 12px;
+      padding: 20px;
       border: 1px solid var(--border);
+      transition: border-color 0.3s;
     }
-    .metric {
-      font-size: 1.4rem;
-      font-weight: 600;
+    .card:hover { border-color: var(--accent); }
+    .card .value {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
     }
-    .label {
+    .card .label {
       color: var(--text-muted);
-      font-size: 0.85rem;
-      margin-top: 4px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
-    .changes {
-      margin-top: 24px;
+    .card .change {
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-top: 8px;
+    }
+
+    /* Section titles */
+    .section {
+      margin-top: 32px;
+    }
+    .section h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section h2 .badge {
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 500;
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--card);
     }
     table {
       width: 100%;
       border-collapse: collapse;
       font-size: 0.875rem;
+      min-width: 600px;
     }
-    th, td {
-      padding: 12px 8px;
-      text-align: left;
-      border-bottom: 1px solid var(--border);
-    }
-    th {
+    thead th {
+      background: var(--card);
       color: var(--text-muted);
       font-weight: 500;
-    }
-    .positive { color: var(--success); }
-    .negative { color: var(--error); }
-    .timestamp {
-      color: var(--text-muted);
+      text-align: left;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
       font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
+    tbody td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover { background: rgba(126, 87, 194, 0.04); }
+
+    .td-date { white-space: nowrap; color: var(--text-muted); }
+    .td-symbol { font-weight: 600; }
+    .td-direction {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .td-direction.LONG { background: rgba(76, 175, 80, 0.15); color: var(--success); }
+    .td-direction.SHORT { background: rgba(244, 67, 54, 0.15); color: var(--error); }
+    .td-pnl { font-weight: 600; }
+    .td-pnl.positive { color: var(--success); }
+    .td-pnl.negative { color: var(--error); }
+    .td-balance { font-weight: 600; }
+
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-muted);
+    }
+    .empty-state .icon { font-size: 3rem; margin-bottom: 12px; }
+    .empty-state p { font-size: 0.95rem; }
+
+    .loading-overlay {
+      text-align: center;
+      padding: 30px;
+      color: var(--text-muted);
+    }
+    .spinner {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-bottom: 8px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
     footer {
-      margin-top: 32px;
+      margin-top: 40px;
       text-align: center;
       color: var(--text-muted);
-      font-size: 0.8rem;
+      font-size: 0.75rem;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      body { padding: 16px 12px; }
+      .summary { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .card { padding: 14px; }
+      .card .value { font-size: 1.2rem; }
     }
   </style>
 </head>
 <body>
   <div class="header">
     <h1>📊 Balance Dashboard</h1>
-    <p>Virtual Balance — OKX/Bybit Simulation</p>
+    <p class="subtitle">Bybit Simulation — Virtual Balance Tracker</p>
   </div>
 
-  <div class="summary">
+  <div class="status-bar">
+    <span><span class="status-dot" id="statusDot"></span><span id="statusText">Loading...</span></span>
+    <span id="lastUpdated">—</span>
+  </div>
+
+  <div class="summary" id="summaryCards">
     <div class="card">
-      <div class="metric">$50.00</div>
+      <div class="value" id="saldoSekarang">—</div>
       <div class="label">Saldo Saat Ini</div>
     </div>
     <div class="card">
-      <div class="metric">$50.00</div>
-      <div class="label">Awal</div>
+      <div class="value" id="saldoAwal">—</div>
+      <div class="label">Modal Awal</div>
     </div>
     <div class="card">
-      <div class="metric">+ $0.00</div>
-      <div class="label">Delta</div>
+      <div class="value" id="deltaValue">—</div>
+      <div class="label">Laba / Rugi</div>
+      <div class="change" id="deltaPct"></div>
     </div>
     <div class="card">
-      <div class="metric">0.00%</div>
-      <div class="label">Perubahan</div>
+      <div class="value" id="tradeCount">—</div>
+      <div class="label">Total Transaksi</div>
     </div>
   </div>
 
-  <div class="changes">
-    <h2>Riwayat Transaksi</h2>
-    <p><em>Tidak ada transaksi</em></p>
+  <div class="section">
+    <h2>📋 Mutasi Balance <span class="badge" id="mutasiCount">0</span></h2>
+    <div class="table-wrap" id="tableContainer">
+      <div class="loading-overlay">
+        <div class="spinner"></div>
+        <p>Memuat data...</p>
+      </div>
+    </div>
   </div>
 
   <footer>
-    Updated: <span id="time">—</span> • Powered by Hermes Agent
+    <span id="footerTime"></span> &bull;
+    Powered by <a href="#">Hermes Agent</a> &bull;
+    <a href="https://github.com/jrrahmanto/trading-dashboard" target="_blank">GitHub Repo</a>
   </footer>
 
   <script>
-    document.getElementById('time').textContent = new Date().toLocaleString('id-ID', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      timeZoneName: 'short'
-    });
+    const DATA_URL = 'data.json?v=' + Date.now();
+    const REFRESH_INTERVAL = 30000; // 30 detik
+
+    function fmtCurrency(n) {
+      if (n === null || n === undefined) return '—';
+      const sign = n >= 0 ? '' : '−';
+      const absVal = Math.abs(n);
+      if (absVal < 0.000001) return '$0.00';
+      return sign + '$' + absVal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    function fmtDecimal(n) {
+      if (n === null || n === undefined) return '—';
+      const v = Number(n);
+      return v.toFixed(2) + '%';
+    }
+
+    function fmtDate(ts) {
+      if (!ts) return '—';
+      try {
+        const d = new Date(ts);
+        if (isNaN(d.getTime())) return ts;
+        return d.toLocaleDateString('id-ID', {
+          year: 'numeric', month: 'short', day: 'numeric'
+        });
+      } catch {
+        return ts;
+      }
+    }
+
+    function fmtTime(ts) {
+      if (!ts) return '—';
+      try {
+        const d = new Date(ts);
+        if (isNaN(d.getTime())) return ts;
+        return d.toLocaleTimeString('id-ID', {
+          hour: '2-digit', minute: '2-digit'
+        }) + ' WIB';
+      } catch {
+        return ts;
+      }
+    }
+
+    function fmtDateTime(ts) {
+      if (!ts) return '—';
+      try {
+        const d = new Date(ts);
+        if (isNaN(d.getTime())) return ts;
+        const date = d.toLocaleDateString('id-ID', {
+          year: 'numeric', month: 'short', day: 'numeric'
+        });
+        const time = d.toLocaleTimeString('id-ID', {
+          hour: '2-digit', minute: '2-digit'
+        }) + ' WIB';
+        return date + '<br><small>' + time + '</small>';
+      } catch {
+        return ts;
+      }
+    }
+
+    function formatPrice(p) {
+      const v = Number(p);
+      if (v < 0.0001) return v.toFixed(8);
+      if (v < 0.01) return v.toFixed(6);
+      if (v < 1) return v.toFixed(4);
+      return v.toFixed(2);
+    }
+
+    // Calculate running balance for history
+    function calcRunningBalance(history, initial) {
+      let bal = Number(initial);
+      return history.map(item => {
+        bal += Number(item.pnl || 0);
+        return { ...item, runningBalance: bal };
+      });
+    }
+
+    function renderData(data) {
+      if (!data) {
+        setStatus('error', 'Gagal memuat data');
+        return;
+      }
+
+      const balance = Number(data.balance) || 0;
+      const initial = Number(data.initial) || 0;
+      const history = Array.isArray(data.history) ? data.history : [];
+      const delta = balance - initial;
+      const deltaPct = initial > 0 ? (delta / initial) * 100 : 0;
+
+      // Summary cards
+      document.getElementById('saldoSekarang').textContent = fmtCurrency(balance);
+      document.getElementById('saldoAwal').textContent = fmtCurrency(initial);
+
+      const deltaEl = document.getElementById('deltaValue');
+      deltaEl.textContent = (delta >= 0 ? '+' : '') + fmtCurrency(delta).replace('−', '-');
+      deltaEl.className = 'value ' + (delta >= 0 ? 'td-pnl positive' : 'td-pnl negative');
+
+      const pctEl = document.getElementById('deltaPct');
+      pctEl.textContent = (deltaPct >= 0 ? '+' : '') + fmtDecimal(deltaPct);
+      pctEl.className = 'change ' + (deltaPct >= 0 ? 'positive' : 'negative');
+
+      document.getElementById('tradeCount').textContent = history.length;
+      document.getElementById('mutasiCount').textContent = history.length;
+
+      // Build table rows
+      const container = document.getElementById('tableContainer');
+
+      if (history.length === 0) {
+        container.innerHTML = '<div class="empty-state">' +
+          '<div class="icon">📭</div>' +
+          '<p>Belum ada transaksi. Mulai trading untuk melihat mutasi balance.</p>' +
+          '</div>';
+        setStatus('live', 'Data tersedia');
+        return;
+      }
+
+      // Calculate running balance (oldest → newest)
+      // history is sorted by timestamp, oldest first
+      const sorted = [...history].sort((a, b) => {
+        return new Date(a.timestamp || a.date || 0) - new Date(b.timestamp || b.date || 0);
+      });
+      const enriched = calcRunningBalance(sorted, initial);
+
+      // Build table HTML
+      let rows = '';
+      const reversed = [...enriched].reverse(); // newest first for display
+
+      reversed.forEach((item, idx) => {
+        const symbol = item.symbol || '—';
+        const dir = item.direction === 'LONG' ? '🟢 LONG' : (item.direction === 'SHORT' ? '🔴 SHORT' : '—');
+        const dirClass = item.direction === 'LONG' ? 'LONG' : (item.direction === 'SHORT' ? 'SHORT' : '');
+        const pnl = Number(item.pnl) || 0;
+        const entry = item.entry ? '$' + formatPrice(item.entry) : '—';
+        const exit = item.exit ? '$' + formatPrice(item.exit) : '—';
+        const size = item.size || '—';
+        const rb = reversed.length - 1 - idx;
+        const runningBal = enriched[rb]?.runningBalance || initial;
+        const ts = item.timestamp || item.date || null;
+
+        rows += '<tr>';
+        rows += '<td class="td-date">' + fmtDateTime(ts) + '</td>';
+        rows += '<td class="td-symbol">' + symbol + '</td>';
+        rows += '<td>' + (dirClass ? '<span class="td-direction ' + dirClass + '">' + item.direction + '</span>' : '—') + '</td>';
+        rows += '<td>' + entry + '</td>';
+        rows += '<td>' + exit + '</td>';
+        rows += '<td>' + size + '</td>';
+        rows += '<td class="td-pnl ' + (pnl >= 0 ? 'positive' : 'negative') + '">' +
+                (pnl >= 0 ? '+' : '') + fmtCurrency(pnl) + '</td>';
+        rows += '<td class="td-balance">' + fmtCurrency(runningBal) + '</td>';
+        rows += '</tr>';
+      });
+
+      const table = '<table>' +
+        '<thead>' +
+        '<tr><th>Waktu (WIB)</th><th>Simbol</th><th>Arah</th><th>Entry</th><th>Exit</th><th>Size</th><th>PnL</th><th>Saldo</th></tr>' +
+        '</thead>' +
+        '<tbody>' + rows + '</tbody>' +
+        '</table>';
+
+      container.innerHTML = table;
+      setStatus('live', 'Live');
+    }
+
+    function setStatus(type, text) {
+      const dot = document.getElementById('statusDot');
+      const txt = document.getElementById('statusText');
+      dot.className = 'status-dot ' + type;
+      txt.textContent = text;
+    }
+
+    async function fetchData() {
+      try {
+        document.getElementById('statusDot').className = 'status-dot loading';
+        document.getElementById('statusText').textContent = 'Memuat...';
+
+        const resp = await fetch(DATA_URL);
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        const data = await resp.json();
+
+        // Update timestamp
+        const now = new Date();
+        document.getElementById('lastUpdated').textContent =
+          '⏱ ' + now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' }) + ' WIB';
+        document.getElementById('footerTime').textContent =
+          'Updated ' + now.toLocaleString('id-ID', {
+            year: 'numeric', month: 'short', day: 'numeric',
+            hour: '2-digit', minute: '2-digit'
+          }) + ' WIB';
+
+        renderData(data);
+      } catch (err) {
+        setStatus('error', 'Error: ' + err.message);
+        console.error('Fetch error:', err);
+      }
+    }
+
+    // Initial load
+    fetchData();
+
+    // Auto-refresh
+    setInterval(fetchData, REFRESH_INTERVAL);
   </script>
 </body>
 </html>
