@@ -1,4 +1,5 @@
 {
+  "initial": 50.0,
   "balance": 50.0,
   "equity": 50.0,
   "unrealized_pnl": 0.0,
@@ -7,6 +8,19 @@
   "positions": [
     "BNBUSDT",
     "CRVUSDT"
+  ],
+  "history": [
+    {
+      "symbol": "CRVUSDT",
+      "direction": "SHORT",
+      "entry": 1.6782,
+      "exit": 1.5825,
+      "size": 100,
+      "pnl": -1.70,
+      "open_time": "2026-06-11T19:17:58Z",
+      "close_time": "2026-06-11T19:18:05Z",
+      "status": "closed"
+    }
   ],
   "last_updated": "2026-06-11 19:17:58 WIB"
 }
