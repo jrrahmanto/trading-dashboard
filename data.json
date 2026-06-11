@@ -1,5 +1,5 @@
 {
-  "balance": 49.16,
+  "balance": 48.30,
   "initial": 50.0,
   "history": [
     {
@@ -9,7 +9,7 @@
       "size": 0.19,
       "entry": 600.59,
       "exit": null,
-      "pnl": -0.25,
+      "pnl": -2.25,
       "timestamp": "2026-06-11T19:17:58+07:00",
       "status": "open"
     },
@@ -19,8 +19,8 @@
       "direction": "LONG",
       "size": 440.0,
       "entry": 0.2465,
-      "exit": 0.2446,
-      "pnl": -0.84,
+      "exit": 0.2429,
+      "pnl": -1.70,
       "timestamp": "2026-06-11T19:35:00+07:00",
       "status": "closed"
     }
