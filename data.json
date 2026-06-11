@@ -1,28 +1,12 @@
 {
-  "balance": 48.91,
-  "initial": 50.0,
-  "history": [
-    {
-      "id": "t1",
-      "symbol": "BNBUSDT",
-      "direction": "LONG",
-      "size": 0.19,
-      "entry": 600.59,
-      "exit": null,
-      "pnl": -0.25,
-      "timestamp": "2026-06-11T19:17:58+07:00",
-      "status": "open"
-    },
-    {
-      "id": "t2",
-      "symbol": "CRVUSDT",
-      "direction": "LONG",
-      "size": 440.0,
-      "entry": 0.2465,
-      "exit": 0.2446,
-      "pnl": -0.84,
-      "timestamp": "2026-06-11T19:35:00+07:00",
-      "status": "closed"
-    }
-  ]
+  "balance": 50.0,
+  "equity": 50.0,
+  "unrealized_pnl": 0.0,
+  "margin_used": 44.51,
+  "available": 5.49,
+  "positions": [
+    "BNBUSDT",
+    "CRVUSDT"
+  ],
+  "last_updated": "2026-06-11 19:17:58 WIB"
 }
