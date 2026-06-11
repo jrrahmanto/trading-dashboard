@@ -1,6 +1,7 @@
 {
   "initial": 50000.0,
-  "balance": 50000.5843,
+  "balance": 49997.8333,
+  "walletBalance": 49997.8333,
   "equity": 50000.5843,
   "unrealized_pnl": 2.751,
   "margin_used": 143.715,
