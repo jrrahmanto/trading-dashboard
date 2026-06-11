@@ -1,26 +1,50 @@
 {
-  "initial": 50.0,
-  "balance": 50.0,
-  "equity": 50.0,
-  "unrealized_pnl": 0.0,
-  "margin_used": 44.51,
-  "available": 5.49,
+  "initial": 50000.0,
+  "balance": 50000.5843,
+  "equity": 50000.5843,
+  "unrealized_pnl": 2.751,
+  "margin_used": 143.715,
+  "available": 99795.42,
   "positions": [
-    "BNBUSDT",
-    "CRVUSDT"
+    {
+      "symbol": "BNBUSDT",
+      "side": "LONG",
+      "size": 1.19,
+      "avgPrice": 600.588,
+      "markPrice": 603.11,
+      "unrealizedPnl": 2.751,
+      "leverage": 5,
+      "sl": 589.1,
+      "tp": 625.1
+    }
   ],
   "history": [
     {
       "symbol": "CRVUSDT",
       "direction": "SHORT",
-      "entry": 1.6782,
-      "exit": 1.5825,
-      "size": 100,
+      "entry": 0.2465,
+      "exit": 0.2429,
+      "size": 440,
       "pnl": -1.70,
-      "open_time": "2026-06-11T19:17:58Z",
-      "close_time": "2026-06-11T19:18:05Z",
-      "status": "closed"
+      "open_time": "2026-06-11T19:17:27Z",
+      "close_time": "2026-06-11T19:22:15Z",
+      "status": "closed",
+      "note": "SL triggered"
+    },
+    {
+      "symbol": "BNBUSDT",
+      "direction": "LONG",
+      "entry": 600.588,
+      "size": 1.19,
+      "pnl": 2.751,
+      "open_time": "2026-06-11T18:40:53Z",
+      "close_time": null,
+      "status": "open",
+      "sl": 589.1,
+      "tp": 625.1,
+      "note": "unrealized PnL"
     }
   ],
-  "last_updated": "2026-06-11 19:17:58 WIB"
+  "cumRealisedPnl": -2.1667,
+  "last_updated": "2026-06-12 08:41 WIB"
 }
