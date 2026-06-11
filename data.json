@@ -9,7 +9,7 @@
       "size": 0.19,
       "entry": 600.59,
       "exit": null,
-      "pnl": 0.0,
+      "pnl": -1.02,
       "timestamp": "2026-06-11T19:17:58+07:00",
       "status": "open"
     },
@@ -20,7 +20,7 @@
       "size": 440.0,
       "entry": 0.2465,
       "exit": null,
-      "pnl": 0.0,
+      "pnl": -0.84,
       "timestamp": "2026-06-11T19:17:58+07:00",
       "status": "open"
     }
