@@ -2,8 +2,8 @@
   "initial": 50.0,
   "balance": 48.3,
   "walletBalance": 48.3,
-  "equity": 47.9,
-  "unrealized_pnl": -0.3982,
+  "equity": 49.46,
+  "unrealized_pnl": 1.1556,
   "margin_used": 0.0,
   "available": 48.3,
   "positions": [
@@ -12,30 +12,19 @@
       "side": "LONG",
       "size": 0.02,
       "avgPrice": 1670.9,
-      "markPrice": 1659.46,
-      "unrealizedPnl": -0.2288,
+      "markPrice": 1662.53,
+      "unrealizedPnl": -0.1674,
       "leverage": 5,
       "sl": 1587.07,
       "tp": 1921.19
-    },
-    {
-      "symbol": "XPLUSDT",
-      "side": "LONG",
-      "size": 261.0,
-      "avgPrice": 0.0764,
-      "markPrice": 0.08436,
-      "unrealizedPnl": 2.0776,
-      "leverage": 5,
-      "sl": 0.0728,
-      "tp": 0.0881
     },
     {
       "symbol": "BNBUSDT",
       "side": "LONG",
       "size": 1.19,
       "avgPrice": 600.58823529,
-      "markPrice": 598.7,
-      "unrealizedPnl": -2.247,
+      "markPrice": 601.7,
+      "unrealizedPnl": 1.323,
       "leverage": 5,
       "sl": 589.1,
       "tp": 625.1
@@ -59,7 +48,7 @@
       "direction": "LONG",
       "entry": 600.588,
       "size": 1.19,
-      "pnl": -2.247,
+      "pnl": 1.323,
       "open_time": "2026-06-11T18:41:00+07:00",
       "close_time": null,
       "status": "open",
@@ -72,20 +61,21 @@
       "direction": "LONG",
       "entry": 0.0764,
       "size": 261,
-      "pnl": 2.0776,
+      "pnl": 3.029,
       "open_time": "2026-06-12T08:08:00+07:00",
-      "close_time": null,
-      "status": "open",
+      "close_time": "2026-06-12T14:56:34+07:00",
+      "status": "closed",
       "sl": 0.0728,
       "tp": 0.0881,
-      "note": "unrealized PnL"
+      "note": "Realized: +3.0290",
+      "exit": 0.0881
     },
     {
       "symbol": "ETHUSDT",
       "direction": "LONG",
       "entry": 1670.9,
       "size": 0.02,
-      "pnl": -0.2288,
+      "pnl": -0.1674,
       "open_time": "2026-06-12T11:05:00+07:00",
       "close_time": null,
       "status": "open",
@@ -95,5 +85,5 @@
     }
   ],
   "cumRealisedPnl": -1.7,
-  "last_updated": "2026-06-12 14:05 WIB"
+  "last_updated": "2026-06-12 15:05 WIB"
 }
