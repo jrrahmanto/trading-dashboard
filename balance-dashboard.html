@@ -446,15 +446,12 @@
         if (!resp.ok) throw new Error('HTTP ' + resp.status);
         const data = await resp.json();
 
-        // Update timestamp
-        const now = new Date();
+        // Use data.last_updated (when JSON was pushed to GitHub)
+        const dataTime = data.last_updated || '—';
         document.getElementById('lastUpdated').textContent =
-          '⏱ ' + now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' }) + ' WIB';
+          '⏱ Sync: ' + dataTime;
         document.getElementById('footerTime').textContent =
-          'Updated ' + now.toLocaleString('id-ID', {
-            year: 'numeric', month: 'short', day: 'numeric',
-            hour: '2-digit', minute: '2-digit'
-          }) + ' WIB';
+          'Terakhir update: ' + dataTime;
 
         renderData(data);
       } catch (err) {
