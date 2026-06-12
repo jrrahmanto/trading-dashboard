@@ -2,8 +2,8 @@
   "initial": 50.0,
   "balance": 48.3,
   "walletBalance": 48.3,
-  "equity": 53.43,
-  "unrealized_pnl": 5.131,
+  "equity": 51.53,
+  "unrealized_pnl": 3.227,
   "margin_used": 0.0,
   "available": 48.3,
   "positions": [
@@ -12,8 +12,8 @@
       "side": "LONG",
       "size": 1.19,
       "avgPrice": 600.58823529,
-      "markPrice": 604.9,
-      "unrealizedPnl": 5.131,
+      "markPrice": 603.3,
+      "unrealizedPnl": 3.227,
       "leverage": 5,
       "sl": 589.1,
       "tp": 625.1
@@ -37,7 +37,7 @@
       "direction": "LONG",
       "entry": 600.588,
       "size": 1.19,
-      "pnl": 5.131,
+      "pnl": 3.227,
       "open_time": "2026-06-11T18:41:00+07:00",
       "close_time": null,
       "status": "open",
@@ -47,5 +47,5 @@
     }
   ],
   "cumRealisedPnl": -1.7,
-  "last_updated": "2026-06-12 07:11 WIB"
+  "last_updated": "2026-06-12 08:05 WIB"
 }
