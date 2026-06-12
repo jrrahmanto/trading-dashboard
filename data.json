@@ -2,34 +2,11 @@
   "initial": 50.0,
   "balance": 48.3,
   "walletBalance": 48.3,
-  "equity": 57.66,
-  "unrealized_pnl": 9.3592,
+  "equity": 48.3,
+  "unrealized_pnl": 0.0,
   "margin_used": 0.0,
   "available": 48.3,
-  "positions": [
-    {
-      "symbol": "ETHUSDT",
-      "side": "LONG",
-      "size": 0.02,
-      "avgPrice": 1670.9,
-      "markPrice": 1674.06,
-      "unrealizedPnl": 0.0632,
-      "leverage": 5,
-      "sl": 1587.07,
-      "tp": 1921.19
-    },
-    {
-      "symbol": "BNBUSDT",
-      "side": "LONG",
-      "size": 1.19,
-      "avgPrice": 600.58823529,
-      "markPrice": 608.4,
-      "unrealizedPnl": 9.296,
-      "leverage": 5,
-      "sl": 589.1,
-      "tp": 625.1
-    }
-  ],
+  "positions": [],
   "history": [
     {
       "symbol": "CRVUSDT",
@@ -85,5 +62,5 @@
     }
   ],
   "cumRealisedPnl": -1.7,
-  "last_updated": "2026-06-13 00:05 WIB"
+  "last_updated": "2026-06-13 01:05 WIB"
 }
