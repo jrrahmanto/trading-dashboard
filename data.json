@@ -2,11 +2,45 @@
   "initial": 50.0,
   "balance": 48.3,
   "walletBalance": 48.3,
-  "equity": 48.3,
-  "unrealized_pnl": 0.0,
+  "equity": 49.64,
+  "unrealized_pnl": 1.3424,
   "margin_used": 0.0,
   "available": 48.3,
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "ARCUSDT",
+      "side": "LONG",
+      "size": 83.0,
+      "avgPrice": 0.09061,
+      "markPrice": 0.08914,
+      "unrealizedPnl": -0.122,
+      "leverage": 10,
+      "sl": 0.0,
+      "tp": 0.0
+    },
+    {
+      "symbol": "ETHUSDT",
+      "side": "LONG",
+      "size": 0.02,
+      "avgPrice": 1670.9,
+      "markPrice": 1660.12,
+      "unrealizedPnl": -0.2156,
+      "leverage": 5,
+      "sl": 1587.07,
+      "tp": 1921.19
+    },
+    {
+      "symbol": "BNBUSDT",
+      "side": "LONG",
+      "size": 1.19,
+      "avgPrice": 600.58823529,
+      "markPrice": 602.0,
+      "unrealizedPnl": 1.68,
+      "leverage": 5,
+      "sl": 589.1,
+      "tp": 625.1
+    }
+  ],
   "history": [
     {
       "symbol": "CRVUSDT",
@@ -25,7 +59,7 @@
       "direction": "LONG",
       "entry": 600.588,
       "size": 1.19,
-      "pnl": 2.989,
+      "pnl": 1.68,
       "open_time": "2026-06-11T18:41:00+07:00",
       "close_time": null,
       "status": "open",
@@ -52,7 +86,7 @@
       "direction": "LONG",
       "entry": 1670.9,
       "size": 0.02,
-      "pnl": -0.1078,
+      "pnl": -0.2156,
       "open_time": "2026-06-12T11:05:00+07:00",
       "close_time": null,
       "status": "open",
@@ -65,7 +99,7 @@
       "direction": "LONG",
       "entry": 0.09061,
       "size": 83.0,
-      "pnl": -0.283,
+      "pnl": -0.122,
       "open_time": "2026-06-13T03:05:35+07:00",
       "close_time": null,
       "status": "open",
@@ -75,5 +109,5 @@
     }
   ],
   "cumRealisedPnl": -1.7,
-  "last_updated": "2026-06-13 05:05 WIB"
+  "last_updated": "2026-06-13 06:05 WIB"
 }
