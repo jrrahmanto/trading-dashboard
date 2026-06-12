@@ -1,19 +1,19 @@
 {
   "initial": 50.0,
-  "balance": 48.30,
-  "walletBalance": 48.30,
-  "equity": 53.45,
-  "unrealized_pnl": 5.15,
+  "balance": 48.3,
+  "walletBalance": 48.3,
+  "equity": 53.43,
+  "unrealized_pnl": 5.131,
   "margin_used": 0.0,
-  "available": 48.30,
+  "available": 48.3,
   "positions": [
     {
       "symbol": "BNBUSDT",
       "side": "LONG",
       "size": 1.19,
-      "avgPrice": 600.588,
-      "markPrice": 604.92,
-      "unrealizedPnl": 5.15,
+      "avgPrice": 600.58823529,
+      "markPrice": 604.9,
+      "unrealizedPnl": 5.131,
       "leverage": 5,
       "sl": 589.1,
       "tp": 625.1
@@ -26,7 +26,7 @@
       "entry": 0.2465,
       "exit": 0.2429,
       "size": 440,
-      "pnl": -1.70,
+      "pnl": -1.7,
       "open_time": "2026-06-11T19:17:27+07:00",
       "close_time": "2026-06-11T19:22:15+07:00",
       "status": "closed",
@@ -37,7 +37,7 @@
       "direction": "LONG",
       "entry": 600.588,
       "size": 1.19,
-      "pnl": 5.15,
+      "pnl": 5.131,
       "open_time": "2026-06-11T18:41:00+07:00",
       "close_time": null,
       "status": "open",
@@ -46,6 +46,6 @@
       "note": "unrealized PnL"
     }
   ],
-  "cumRealisedPnl": -1.70,
-  "last_updated": "2026-06-12 10:00 WIB"
+  "cumRealisedPnl": -1.7,
+  "last_updated": "2026-06-12 07:11 WIB"
 }
